@@ -67,3 +67,9 @@ for user in dict_of_logs.keys():
     else:
         print(f"Пользователь {user} сделал 0 действий")
 
+sorted_list = sorted(dict_of_logs.items(), key=lambda x: session_time(x[0]))
+unique_items = []
+for item in sorted_list:
+    if item[0] not in unique_items:
+        unique_items.append(item[0])
+print(unique_items)
